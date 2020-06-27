@@ -11,13 +11,14 @@ namespace trig {
     const PI_OVER_2 = 90;
 
     let initSinTable = () => {
-        initSinTable = () => {};
-        sinTable = [];
-        for (let i = 0; i <= PI_OVER_2; ++i) {
-            // Generate a quarter arc
-            const val = Math.sin(Math.PI / 2 * i / PI_OVER_2);
-            const valFx8 = Fx8(val);
-            sinTable.push(valFx8);
+        if (!sinTable) {
+            sinTable = [];
+            for (let i = 0; i <= PI_OVER_2; ++i) {
+                // Generate a quarter arc
+                const val = Math.sin(Math.PI / 2 * i / PI_OVER_2);
+                const valFx8 = Fx8(val);
+                sinTable.push(valFx8);
+            }
         }
     }
 
